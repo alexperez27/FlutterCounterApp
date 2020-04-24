@@ -7,17 +7,27 @@ on:
     branches: [ release/apk ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-
     container:
       image: oursky/flutter:v1.12.13-hotfix.5
-
     steps:
     - uses: actions/checkout@v2
     - name: Install dependencies
       run: flutter pub get
     - name: Run tests
       run: flutter test
+
+  build_aok:
+    name: Generate apk
+    runs-on: ubuntu-latest
+    container:
+      image: oursky/flutter:v1.12.13-hotfix.5
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: flutter pub get
+    - name: enable-build-plugin-as-aar
+      run: flutter config --enable-build-plugin-as-aar
     - name : Generate APK
       run: flutter build apk
