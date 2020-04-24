@@ -2,9 +2,9 @@ name: Dart CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ release/apk ]
   pull_request:
-    branches: [ master ]
+    branches: [ release/apk ]
 
 jobs:
   build:
@@ -12,7 +12,10 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image:  cirrusci/flutter:latest
+      image: cirrusci/flutter:latest
+
+    pub_cache:
+      folder: ~/.pub-cache
 
     steps:
     - uses: actions/checkout@v2
@@ -20,3 +23,5 @@ jobs:
       run: flutter pub get
     - name: Run tests
       run: flutter pub run test
+    - name : Generate APK
+      run: flutter build apk --obfuscate --split-debug-info="SplitDebugInfo"
