@@ -12,10 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: cirrusci/flutter:latest
-
-    pub_cache:
-      folder: ~/.pub-cache
+      image: oursky/flutter:latest
 
     steps:
     - uses: actions/checkout@v2
