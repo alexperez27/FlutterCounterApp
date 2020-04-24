@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: oursky/flutter:latest
+      image: oursky/flutter:v1.12.13-hotfix.5
 
     steps:
     - uses: actions/checkout@v2
