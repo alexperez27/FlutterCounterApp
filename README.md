@@ -2,6 +2,8 @@
 
 A new Flutter project.
 
+![Screenshot](https://raw.githubusercontent.com/alexperez27/FlutterCounterApp/master/screenshots/Screenshot_2020-04-23-22-51-40-029_com.example.contador.jpg)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
